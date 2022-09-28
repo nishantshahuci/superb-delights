@@ -1,0 +1,6 @@
+.icon {
+  height: 100px;
+  width: 100px;
+  fill: var(--primary);
+  color: var(--grey-dark);
+}
