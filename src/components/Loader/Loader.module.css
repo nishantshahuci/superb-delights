@@ -1,0 +1,28 @@
+.loader {
+  height: 20rem;
+  width: 20rem;
+  position: relative;
+  fill: var(--primary);
+}
+
+.loader > * {
+  width: 50%;
+  display: flex;
+  align-items: stretch;
+  position: absolute;
+}
+
+.forkContainer {
+  top: 50%;
+  left: 0;
+}
+
+.spoonContainer {
+  top: 50%;
+  right: 0;
+}
+
+.forkContainer > *,
+.spoonContainer > * {
+  flex-grow: 1;
+}
