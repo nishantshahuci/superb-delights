@@ -5,11 +5,9 @@ html {
 
 body {
   box-sizing: border-box;
-  display: flex;
-  align-items: stretch;
-  justify-content: stretch;
+  background-color: var(--grey-dark);
 }
 
 #root {
-  width: 100%;
+  flex-grow: 1;
 }

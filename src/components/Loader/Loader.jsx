@@ -32,6 +32,7 @@ const exitAnimation = {
   transition: {
     duration: 1,
     type: "tween",
+    delay: 0.1,
   },
 };
 
@@ -46,11 +47,12 @@ const loaderVariants = {
   exit: exitAnimation,
 };
 
-const Loader = () => {
+export default function Loader() {
   return (
     <div className={styles.loader}>
       <motion.div
         className={styles.forkContainer}
+        // @ts-ignore
         variants={loaderVariants}
         initial="initial"
         animate="animation"
@@ -60,6 +62,7 @@ const Loader = () => {
       </motion.div>
       <motion.div
         className={styles.spoonContainer}
+        // @ts-ignore
         variants={loaderVariants}
         initial={["initial", "flip"]}
         animate={["animation", "flipAnimation"]}
@@ -69,6 +72,4 @@ const Loader = () => {
       </motion.div>
     </div>
   );
-};
-
-export default Loader;
+}

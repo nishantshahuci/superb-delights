@@ -1,11 +1,12 @@
 import React from "react";
 
-const Home = () => {
+export default function Home() {
+  // const [show, setShow] = useState(true);
   return (
-    <div>
+    <div className="flexColumn rounded">
+      {/* <button onClick={() => setShow(!show)}>{show ? "Hide" : "Show"}</button>
+      <AnimatePresence>{show && <Loader key="loader" />}</AnimatePresence> */}
       <div>home</div>
     </div>
   );
-};
-
-export default Home;
+}

@@ -1,34 +1,40 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 import "../../styles/base.css";
 import "../../styles/reset.css";
 import "../../styles/typography.css";
+import "../../styles/utils.css";
 import "../../styles/variables.css";
 
-import Loader from "../../components/Loader/Loader";
+import Carousel from "../../components/Carousel/Carousel";
+import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
 
-import { AnimatePresence } from "framer-motion";
 import styles from "./App.module.css";
 
-function App() {
-  const [show, setShow] = useState(true);
-
+export default function App() {
   const location = useLocation();
   const navigate = useNavigate();
 
   // if the current path is just "/", redirect to the home page
+  // which will populate the Outlet with the Home component
   useEffect(() => {
     if (location.pathname === "/") navigate("/home", { replace: true });
   }, [location.pathname, navigate]);
 
   return (
-    <div className={styles.app}>
-      <Outlet />
-      <button onClick={() => setShow(!show)}>{show ? "Hide" : "Show"}</button>
-      <AnimatePresence>{show && <Loader />}</AnimatePresence>
-    </div>
+    <>
+      <Navbar />
+      <section className="padding">
+        <Carousel />
+      </section>
+      <main className={`${styles.main} flexColumn rounded padding`}>
+        <Outlet />
+      </main>
+      <footer className="padding">
+        <Footer />
+      </footer>
+    </>
   );
 }
-
-export default App;
