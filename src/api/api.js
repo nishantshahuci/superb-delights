@@ -1,3 +1,10 @@
+export const carouselData = {
+  Breakfast: "Start your day right with a delicious meal",
+  Lunch: "Take a break with one of our many lunch options",
+  Dinner: "Come celebrate your special occasions with us",
+  Dessert: "Dessert doesn't go to the stomach... Dessert goes to the heart",
+};
+
 export const tags = [
   "Breakfast",
   "Lunch",

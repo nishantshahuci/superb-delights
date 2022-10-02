@@ -1,0 +1,14 @@
+.logo {
+  position: relative;
+  width: 15rem;
+  fill: var(--primary);
+  display: flex;
+  gap: 0;
+}
+
+.logo > *:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+}

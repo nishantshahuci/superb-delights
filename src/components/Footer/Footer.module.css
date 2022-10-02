@@ -1,0 +1,8 @@
+.footer {
+  background: linear-gradient(to top, var(--grey-dark), transparent);
+  padding: 3rem;
+}
+
+.footer > ul {
+  display: flex;
+}
