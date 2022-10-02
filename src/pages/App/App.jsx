@@ -4,7 +4,6 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import "../../styles/base.css";
 import "../../styles/reset.css";
 import "../../styles/typography.css";
-import "../../styles/utils.css";
 import "../../styles/variables.css";
 
 import Carousel from "../../components/Carousel/Carousel";
@@ -17,24 +16,25 @@ export default function App() {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const isIndexPage = location.pathname === "/";
+  const isHomePage = location.pathname === "/home";
+
   // if the current path is just "/", redirect to the home page
   // which will populate the Outlet with the Home component
   useEffect(() => {
-    if (location.pathname === "/") navigate("/home", { replace: true });
-  }, [location.pathname, navigate]);
+    if (isIndexPage) navigate("/home", { replace: true });
+  }, [isIndexPage, navigate]);
 
   return (
     <>
-      <Navbar />
-      <section className="padding">
-        <Carousel />
-      </section>
-      <main className={`${styles.main} flexColumn rounded padding`}>
+      <header className={styles.header}>
+        <Navbar />
+        {isHomePage && <Carousel />}
+      </header>
+      <main className={`${styles.main}`}>
         <Outlet />
       </main>
-      <footer className="padding">
-        <Footer />
-      </footer>
+      <Footer />
     </>
   );
 }

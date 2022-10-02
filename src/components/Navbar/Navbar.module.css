@@ -1,0 +1,33 @@
+.nav {
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(to bottom, var(--grey-dark), transparent);
+  padding: 3rem;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+}
+
+.navList > * {
+  flex-grow: 1;
+}
+
+.navTitle {
+  display: flex;
+  justify-content: center;
+}
+
+.navLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  color: var(--primary);
+  font-size: 5rem;
+  letter-spacing: 0.25rem;
+  text-decoration: underline;
+  text-decoration-thickness: 0.1rem;
+  text-underline-offset: 2rem;
+}

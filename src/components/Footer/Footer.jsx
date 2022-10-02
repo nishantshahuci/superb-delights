@@ -1,10 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
-    <div>
-      <div>footer</div>
-    </div>
+    <footer className={`${styles.footer}`}>
+      <ul>
+        <li>
+          <Link to="/">About</Link>
+        </li>
+        <li>
+          <Link to="/">Contact</Link>
+        </li>
+      </ul>
+    </footer>
   );
 };
 
